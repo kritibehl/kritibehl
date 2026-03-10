@@ -2,7 +2,7 @@
 
 **MS CS, University of Florida (Dec 2025) · GPA 3.8 · Gainesville, FL (Open to Relocation)**
 
-I build correctness-first distributed systems and reliability tooling — crash-safe execution, deterministic debugging, resilience validation, and ML evaluation infrastructure.
+I build correctness-first distributed systems and reliability tooling — crash-safe execution, deterministic debugging, resilience validation and ML evaluation infrastructure.
 
 ---
 
