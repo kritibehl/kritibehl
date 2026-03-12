@@ -25,7 +25,7 @@ I build correctness-first distributed systems and reliability tooling — crash-
 |---|---|---|
 | [Temporal Go SDK](https://github.com/temporalio/sdk-go) | Fixed goroutine leak in child-workflow test paths — enforced idempotent closure with sync.Once across exit paths | ✅ **Merged** |
 | [Azure Go SDK (azcore)](https://github.com/Azure/azure-sdk-for-go) | Surfaced realClose() transport errors in retry policy using errors.Join — preserves transport-layer signal | 🔄 PR under review · CI passing |
-| [Temporal Go SDK](https://github.com/temporalio/sdk-go) | Applied workflow context propagators in mock execution paths — closed gap between test and real runtime semantics | 🔄 PR under review |
+| [Temporal Go SDK](https://github.com/temporalio/sdk-go) | Applied workflow context propagators in mock execution paths — closed gap between test and real runtime semantics | ✅ **Merged** |
 | [Azure Go SDK](https://github.com/Azure/azure-sdk-for-go) | Implemented W3C Trace Context propagation (traceparent/tracestate) via OpenTelemetry in HTTP tracing pipeline | 🔄 PR under review · CI passing |
 
 ---
