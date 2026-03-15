@@ -73,7 +73,7 @@ API-first document analysis workflow engine with batch jobs, run-to-run diffing,
 
 ## Writing
 
-I write about distributed failures, reliability engineering, deterministic debugging, and GenAI regression detection on [Medium](https://medium.com/@kriti0608).
+I write about distributed failures, reliability engineering, deterministic debugging and GenAI regression detection on [Medium](https://medium.com/@kriti0608).
 
 ---
 
@@ -86,4 +86,4 @@ I write about distributed failures, reliability engineering, deterministic debug
 
 ---
 
-Open to backend, systems, reliability, platform, and infrastructure engineering roles.
+Open to backend, systems, reliability, platform and infrastructure engineering roles.
