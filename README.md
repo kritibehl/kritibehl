@@ -1,89 +1,48 @@
-# Kriti Behl
+## Kriti Behl
 
-Backend and systems engineer focused on distributed systems correctness, fault-tolerant services, deterministic debugging, and reliability tooling.
+MS CS @ University of Florida (Dec 2025) · Distributed Systems · Reliability Engineering · Backend Correctness
 
-Recently completed M.S. in Computer Science at the University of Florida. I build crash-safe execution systems, resilience validation tooling, and release-quality evaluation infrastructure.
-
----
-
-## Featured Work
-
-### [Faultline](https://github.com/kritibehl/faultline)
-Crash-safe distributed job queue with lease-based ownership, fencing tokens, and idempotent commit guards.
-
-**Proof:** 0 duplicate commits and 1,500 stale-write rejections across 1,500 fault-injected race reproductions at 0/5/10% fault rates.
-
-### [KubePulse](https://github.com/kritibehl/KubePulse)
-Kubernetes resilience validation framework with declarative disruption scenarios, automated scorecards, and readiness false-positive detection.
-
-**Proof:** 8s recovery, ~210ms p95 latency, and resilience score 86/100 in validated stress scenarios.
-
-### [DetTrace](https://github.com/kritibehl/dettrace)
-Deterministic concurrency replay system in C++17 with a Swift companion analyzer for async/await and actor-isolated state.
-
-**Proof:** isolated first divergence at event index 5 and validated Swift replay analysis with passing test coverage.
-
-### [FairEval Suite](https://github.com/kritibehl/FairEval-Suite)
-CI-integrated GenAI evaluation and regression gating with real DistilBERT inference and threshold-based release blocking.
-
-**Proof:** automated regression gate for score drops > 0.05, plus [Hugging Face demo](https://huggingface.co/spaces/kriti0608/FairEval-Suite) and [Zenodo artifact](https://doi.org/10.5281/zenodo.17625268).
-
-### [AutoOps-Insight](https://github.com/kritibehl/autoops-insight)
-CI and infrastructure failure analytics platform for recurrence tracking, release-risk reporting, and operational visibility.
-
-**Proof:** 11 FastAPI endpoints, 5 Prometheus counters, and 14 passing tests.
-
-### [ResuMate](https://github.com/kritibehl/ResuMate)
-API-first document analysis workflow engine with batch jobs, run-to-run diffing, auditability, and SHA-256 fingerprinting.
-
-**Proof:** 12 endpoints, 34 Python files, and 10 test files.
+I build systems that stay correct under failure — lease-expiry races, network faults, concurrent crashes, production-like disruptions.
 
 ---
 
-## Open Source
+### Open Source
 
-### [Temporal Go SDK](https://github.com/temporalio/sdk-go)
-- Fixed a goroutine leak in child-workflow test paths by enforcing idempotent closure with `sync.Once`. **Merged**
-- Applied workflow context propagators in mock execution paths so tests observe propagated headers like real runtime. **Merged**
+| PR | Repo | What | Status |
+|---|---|---|---|
+| [#2200](https://github.com/temporalio/sdk-go/pull/2200) | temporalio/sdk-go | Goroutine leak fix — child workflow test env (doneChannel not closed on all completion paths; idempotent sync.Once closure; regression test restructured per maintainer review) | ✅ Merged Mar 2, 2026 |
+| [#2212](https://github.com/temporalio/sdk-go/pull/2212) | temporalio/sdk-go | OnWorkflow mock context propagation fix — ctxCopy missing header propagation before matcher evaluation; regression test added after maintainer request | ✅ Merged Mar 12, 2026 |
+| [#26051](https://github.com/Azure/azure-sdk-for-go/pull/26051) | Azure/azure-sdk-for-go | Join request + body close errors in retry policy using errors.Join; realClose() errors no longer silently dropped | Under review |
+| [#26106](https://github.com/Azure/azure-sdk-for-go/pull/26106) | Azure/azure-sdk-for-go | W3C Trace Context propagation (traceparent/tracestate) in HTTP trace policy | Under review |
 
-### [Azure Go SDK (azcore)](https://github.com/Azure/azure-sdk-for-go)
-- Surfaced transport `realClose()` errors in retry policy with `errors.Join` so close-path failures are preserved. **PR under review**
-- Implemented W3C Trace Context propagation (`traceparent` / `tracestate`) in the HTTP tracing pipeline. **PR under review**
-
----
-
-## Additional Work
-
-- [JailBreakDefense](https://github.com/kritibehl/JailBreakDefense) — intent-preserving jailbreak defense with [demo](https://huggingface.co/spaces/kriti0608/JailBreakDefense) and [Zenodo](https://doi.org/10.5281/zenodo.17694184)
-- [SpeechIntentEval](https://github.com/kritibehl/SpeechIntentEval) — intent regression suite for indirect, polite, sarcastic, and ambiguous assistant prompts
+Both Temporal PRs required maintainer-requested revisions. Both resolved in a single round.
 
 ---
 
-## Tech
+### Projects
 
-**Languages:** Python, Go, C++, Swift, Java, TypeScript, SQL  
-**Backend:** FastAPI, Flask, Node.js/Express, REST APIs  
-**Infra:** Docker, Kubernetes, AWS, Azure, GitHub Actions, CI/CD  
-**Databases:** PostgreSQL, SQLite, MongoDB, Redis  
-**Observability:** Prometheus, Grafana, structured logging  
-**ML:** PyTorch, Hugging Face Transformers, DistilBERT, evaluation pipelines  
-**Systems:** Distributed systems, concurrency control, fault tolerance, deterministic replay, network fault injection, release gating
+**[Faultline](https://github.com/kritibehl/faultline)** — Crash-safe distributed job queue. Prevents duplicate execution under lease-expiry races via fencing tokens + idempotent commits. Validated: 0 duplicate commits across 1,500 race reproductions at 0/5/10% network fault injection.
 
----
+**[KubePulse](https://github.com/kritibehl/KubePulse)** — Kubernetes resilience validation. Declarative YAML disruption scenarios → automated scorecards (recovery time, p95 latency, error rate, readiness false-positive detection). CPU-stress: 8s recovery, ~210ms p95, score 86/100.
 
-## Writing
+**[AutoOps-Insight](https://github.com/kritibehl/autoops-insight)** — CI failure analytics. Two-layer classification (rule-based + ML fallback), config-driven YAML rules, rule simulation engine, admin audit log, incident replay. 16 tests.
 
-I write about distributed failures, reliability engineering, deterministic debugging and GenAI regression detection on [Medium](https://medium.com/@kriti0608).
+**[FairEval-Suite](https://github.com/kritibehl/FairEval-Suite)** — ML evaluation + regression-gating pipeline. DistilBERT inference, RAG-overlap scorer, release gate that blocks degraded candidates. Zenodo [doi:10.5281/zenodo.17625268](https://zenodo.org/record/17625268).
+
+**[DetTrace](https://github.com/kritibehl/dettrace)** — Deterministic concurrency replay tool. C++17 + Swift. Identifies first divergence point in flaky concurrent runs. Swift companion: async/await, actor isolation, JSON+Markdown reports.
+
+**[ResuMate](https://github.com/kritibehl/ResuMate)** — API-first document analysis workflow engine. Async job lifecycle, SHA-256 fingerprinting, schema-versioned contracts, role-gated access, audit trail. React/Next.js dashboard.
 
 ---
 
-## Connect
+### Writing
 
-- [LinkedIn](https://linkedin.com/in/kriti-behl)
-- [GitHub](https://github.com/kritibehl)
-- [Portfolio](https://kriti-portfolio-six.vercel.app)
-- [Medium](https://medium.com/@kriti0608)
+[medium.com/@kriti0608](https://medium.com/@kriti0608) — distributed systems failures, reliability engineering, ML evaluation infrastructure
+
+- [How I built a distributed job queue that stays correct under crashes, races, and network faults](https://medium.com/@kriti0608/how-i-built-a-distributed-job-queue-that-stays-correct-under-crashes-races-and-network-faults-48bc50eec723)
+- [I thought I built observability. Then an incident proved I didn't.](https://medium.com/@kriti0608/i-thought-i-built-observability-then-an-incident-proved-i-didnt-9b749e0d4ff3)
+- [Detecting silent regressions in GenAI systems at scale](https://medium.com/@kriti0608/detecting-silent-regressions-in-genai-systems-at-scale-039ec03db1e4)
 
 ---
 
-Open to backend, systems, reliability, platform and infrastructure engineering roles.
+📍 Gainesville, FL · Open to relocation · [LinkedIn](https://www.linkedin.com/in/kriti-behl/) · [Portfolio](https://kriti-portfolio-six.vercel.app)
