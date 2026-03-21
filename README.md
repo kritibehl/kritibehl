@@ -26,13 +26,15 @@ My work sits at the intersection of distributed systems reliability, Kubernetes 
 
 ## Open Source and Writing
 
-I write about the systems problems behind these projects — the failure modes that motivated them, the design decisions that matter and the guarantees that separate production systems from demos.
+I write about the systems problems behind these projects — the failure modes that motivated them, the design decisions that matter, and the guarantees that separate production systems from demos.
 
 I also contribute to production-grade open source infrastructure, including fixes and test improvements in the Temporal Go SDK and work in the Azure Go SDK ecosystem.
 
 Selected writing:
-- [How I built a distributed job queue that stays correct under crashes, races, and network faults](https://medium.com/@kriti0608/how-i-built-a-distributed-job-queue-that-stays-correct-under-crashes-races-and-network-faults-48bc50eec723)
-
+- [How I Built a Distributed Job Queue That Stays Correct Under Crashes, Races, and Network Faults](https://medium.com/@kriti0608/how-i-built-a-distributed-job-queue-that-stays-correct-under-crashes-races-and-network-faults-48bc50eec723)
+- [Detecting Silent Regressions in GenAI Systems at Scale](https://medium.com/@kriti0608/detecting-silent-regressions-in-genai-systems-at-scale-039ec03db1e4)
+- [I Thought I Built Observability. Then an Incident Proved I Didn’t.](https://medium.com/@kriti0608/i-thought-i-built-observability-then-an-incident-proved-i-didnt-9b749e0d4ff3)
+  
 ---
 
 ## What I Care About
