@@ -2,17 +2,23 @@
 
 **Backend · Distributed Systems · Reliability**
 
-Backend engineer focused on correctness under failure, observability, and production-shaped systems tooling. I build and validate systems with fault injection, deterministic debugging, resilience analysis, and measurable recovery behavior.
+Backend engineer focused on correctness under failure, observability, and production-shaped systems tooling. I build and validate systems with fault injection, deterministic debugging, resilience analysis and measurable recovery behavior.
 
-Two merged PRs in the Temporal Go SDK. Additional Azure Go SDK contributions under review.
+Two merged PRs in the Temporal Go SDK. Additional Azure Go SDK contributions are open for review.
 
 ---
 
 ## Open Source
 
-- **Temporal Go SDK** — merged fixes in workflow and test behavior, including goroutine-leak prevention and workflow-context handling improvements
-- **Azure Go SDK for Go** — contributions around retry error surfacing and distributed tracing / W3C trace-context propagation
-- Interested in reliability, debugging, observability, workflow systems, and failure-oriented engineering
+- **Temporal Go SDK**
+  - [#2212 — Fix OnWorkflow mock to see propagated context headers](https://github.com/temporalio/sdk-go/pull/2212)
+  - [#2200 — Fix 2090 child workflow goroutine leak](https://github.com/temporalio/sdk-go/pull/2200)
+
+- **Azure SDK for Go**
+  - [#26106 — azcore/runtime: propagate W3C trace context headers in HTTP trace policy](https://github.com/Azure/azure-sdk-for-go/pull/26106)
+  - [#26051 — azcore: join request and body close errors in retry policy](https://github.com/Azure/azure-sdk-for-go/pull/26051)
+
+- Interested in reliability, debugging, observability, workflow systems and failure-oriented engineering
 
 ---
 
@@ -83,4 +89,4 @@ Deterministic replay and concurrency-debugging toolkit for analyzing race-prone 
 
 ## What I’m Looking For
 
-I’m most interested in backend, distributed systems, reliability, SRE, platform and production engineering roles where correctness, observability and failure handling matter.
+I’m most interested in backend, distributed systems, reliability, SRE, platform, and production engineering roles where correctness, observability, and failure handling matter.
