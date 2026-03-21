@@ -1,92 +1,53 @@
 # Kriti Behl
 
-**Backend · Distributed Systems · Reliability**
-
-Backend engineer focused on correctness under failure, observability, and production-shaped systems tooling. I build and validate systems with fault injection, deterministic debugging, resilience analysis and measurable recovery behavior.
-
-Two merged PRs in the Temporal Go SDK. Additional Azure Go SDK contributions are open for review.
+**Engineer focused on correctness under failure, resilience validation, incident reconstruction, and release safety for distributed and AI systems.**
 
 ---
 
-## Open Source
+## What I Build
 
-- **Temporal Go SDK**
-  - [#2212 — Fix OnWorkflow mock to see propagated context headers](https://github.com/temporalio/sdk-go/pull/2212)
-  - [#2200 — Fix 2090 child workflow goroutine leak](https://github.com/temporalio/sdk-go/pull/2200)
+I build systems that do more than run — they prove correctness, surface failure modes, and generate evidence teams can trust before production.
 
-- **Azure SDK for Go**
-  - [#26106 — azcore/runtime: propagate W3C trace context headers in HTTP trace policy](https://github.com/Azure/azure-sdk-for-go/pull/26106)
-  - [#26051 — azcore: join request and body close errors in retry policy](https://github.com/Azure/azure-sdk-for-go/pull/26051)
-
-- Interested in reliability, debugging, observability, workflow systems and failure-oriented engineering
+My work sits at the intersection of distributed systems reliability, Kubernetes resilience, incident forensics, and ML evaluation infrastructure, with an emphasis on formal correctness guarantees, evidence-backed validation and production-minded operator tooling.
 
 ---
 
-## Selected Projects
+## Featured Projects
 
-### [Faultline](https://github.com/kritibehl/faultline)
-Distributed job execution system designed for correctness under crashes, lease expiry, retries, and worker races.
-
-- Built lease-based worker ownership with fencing tokens and stale-write prevention
-- Added deterministic fault-injection paths to reproduce race conditions and validate recovery behavior
-- Exposed operational metrics for claim failures, retries, reconnects, stale-commit prevention, and recovery flow visibility
-
-### [KubePulse](https://github.com/kritibehl/KubePulse)
-Kubernetes resilience validation framework for measuring service behavior under infrastructure and network faults.
-
-- Simulates DNS failures, latency, packet loss, and related degradation scenarios in Kubernetes environments
-- Produces Prometheus / Grafana-backed resilience insights with recovery-oriented observability
-- Focused on service health, failure impact visibility, and production-style reliability analysis
-
-### [AutoOps-Insight](https://github.com/kritibehl/AutoOps-Insight)
-Operator-facing incident and CI failure analysis platform for recurring failure detection and triage support.
-
-- Built configurable incident classification, auditability, and rule-driven failure-family grouping
-- Added workflows for rollback preview, remediation guidance, and incident correlation
-- Designed to reduce triage ambiguity and improve operator-facing debugging clarity
-
-### [DetTrace](https://github.com/kritibehl/dettrace)
-Deterministic replay and concurrency-debugging toolkit for analyzing race-prone behavior through trace comparison.
-
-- Compares expected vs. actual execution traces to surface behavioral divergence
-- Supports invariant verification and replay-oriented debugging for concurrency-sensitive systems
-- Built to make hard-to-reproduce failures easier to reason about and validate
+| Project | What It Does |
+|---|---|
+| [**Faultline**](https://github.com/kritibehl/faultline) | Crash-safe distributed job execution with fencing tokens and lease-based recovery, validated across 1,500 deterministic race reproductions |
+| [**FairEval-Suite**](https://github.com/kritibehl/FairEval-Suite) | CI-integrated regression gating for GenAI systems that detects silent behavior drift across model, prompt, retrieval, and inference changes before deployment |
+| [**AutoOps-Insight**](https://github.com/kritibehl/AutoOps-Insight) | Operator-facing incident triage that classifies failure logs, fingerprints recurring signatures, previews rule-change impact, and generates release-risk reports |
+| [**DetTrace**](https://github.com/kritibehl/dettrace) | Distributed incident forensics that reconstructs cross-service failure timelines, identifies the first failing hop, infers blast radius, and semantically diffs regressions |
+| [**KubePulse**](https://github.com/kritibehl/KubePulse) | Kubernetes resilience validation that measures real recovery behavior, catches readiness false positives, and produces scorecarded reports before rollout |
 
 ---
 
-## More Projects
+## Open Source and Writing
 
-- [FairEval Suite](https://github.com/kritibehl/FairEval-Suite) — deterministic evaluation and regression analysis tooling for GenAI systems
-- [Portfolio Website](https://github.com/kritibehl/portfolio) — personal site highlighting projects, writing, and technical focus
-- Additional backend, infra, and evaluation work across debugging, reliability and system validation
+I write about the systems problems behind these projects — the failure modes that motivated them, the design decisions that matter and the guarantees that separate production systems from demos.
 
----
+I also contribute to production-grade open source infrastructure, including fixes and test improvements in the Temporal Go SDK and work in the Azure Go SDK ecosystem.
 
-## Technical Focus
-
-**Languages:** Go, Python, C++17, Java, TypeScript, SQL  
-**Infrastructure:** Kubernetes, Docker, GitHub Actions, Prometheus, Grafana, OpenTelemetry  
-**Data & Storage:** PostgreSQL, Redis, SQLite, MongoDB  
-**Areas:** distributed systems, reliability engineering, observability, deterministic debugging, fault injection, incident analysis
+Selected writing:
+- [How I built a distributed job queue that stays correct under crashes, races, and network faults](https://medium.com/@kriti0608/how-i-built-a-distributed-job-queue-that-stays-correct-under-crashes-races-and-network-faults-48bc50eec723)
 
 ---
 
-## Writing
+## What I Care About
 
-- [Detecting Silent Regressions in GenAI Systems at Scale](https://medium.com/@kriti0608)
-- [The Day My Distributed System Failed — and Why That Was the Point](https://medium.com/@kriti0608)
-
----
-
-## Links
-
-- **LinkedIn:** [linkedin.com/in/kriti-behl](https://www.linkedin.com/in/kriti-behl/)
-- **GitHub:** [github.com/kritibehl](https://github.com/kritibehl)
-- **Medium:** [medium.com/@kriti0608](https://medium.com/@kriti0608)
-- **Email:** kriti0608@gmail.com
+- Correctness that holds under real failure conditions, not just happy paths
+- Validation infrastructure that gives teams evidence, not just confidence
+- Operator tooling that makes repeated incidents cheaper to triage and safer to fix
+- Building systems where "it passed" means something specific and reproducible
 
 ---
 
-## What I’m Looking For
+## Connect
 
-I’m most interested in backend, distributed systems, reliability, SRE, platform, and production engineering roles where correctness, observability, and failure handling matter.
+[LinkedIn](https://linkedin.com/in/kritibehl) · [GitHub](https://github.com/kritibehl) · [Medium](https://medium.com/@kriti0608) · kriti0608@gmail.com
+
+---
+
+*If you work on distributed systems, reliability, platform engineering, or AI infrastructure, start with Faultline or FairEval.*
