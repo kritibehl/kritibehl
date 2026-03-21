@@ -52,7 +52,7 @@ Deterministic replay and concurrency-debugging toolkit for analyzing race-prone 
 
 - [FairEval Suite](https://github.com/kritibehl/FairEval-Suite) — deterministic evaluation and regression analysis tooling for GenAI systems
 - [Portfolio Website](https://github.com/kritibehl/portfolio) — personal site highlighting projects, writing, and technical focus
-- Additional backend, infra, and evaluation work across debugging, reliability, and system validation
+- Additional backend, infra, and evaluation work across debugging, reliability and system validation
 
 ---
 
@@ -83,4 +83,4 @@ Deterministic replay and concurrency-debugging toolkit for analyzing race-prone 
 
 ## What I’m Looking For
 
-I’m most interested in backend, distributed systems, reliability, SRE, platform, and production engineering roles where correctness, observability, and failure handling matter.
+I’m most interested in backend, distributed systems, reliability, SRE, platform and production engineering roles where correctness, observability and failure handling matter.
