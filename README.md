@@ -1,6 +1,8 @@
 # Kriti Behl
 
-**Engineer focused on correctness under failure, resilience validation, incident reconstruction, and release safety for distributed and AI systems.**
+Software engineer focused on backend infrastructure, distributed systems and reliability.
+
+Built production backend systems at Thales Group, contributed merged fixes to the Temporal Go SDK, and developed systems around crash safety, resilience validation, incident analysis and release safety.
 
 ---
 
