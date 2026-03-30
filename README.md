@@ -28,9 +28,10 @@ My work sits at the intersection of distributed systems reliability, Kubernetes 
 
 ## Open Source and Writing
 
-I write about the systems problems behind these projects — the failure modes that motivated them, the design decisions that matter, and the guarantees that separate production systems from demos.
+I write about the systems problems behind these projects — the failure modes that motivated them, the design decisions that matter and the guarantees that separate production systems from demos.
 
-I also contribute to production-grade open source infrastructure, including fixes and test improvements in the Temporal Go SDK and work in the Azure Go SDK ecosystem.
+- Temporal Go SDK: 2 merged PRs and 1 open PR across workflow test reliability and context propagation behavior
+- Azure Go SDK: 2 PRs under review in retry/error handling and trace context propagation
 
 Selected writing:
 - [How I Built a Distributed Job Queue That Stays Correct Under Crashes, Races, and Network Faults](https://medium.com/@kriti0608/how-i-built-a-distributed-job-queue-that-stays-correct-under-crashes-races-and-network-faults-48bc50eec723)
