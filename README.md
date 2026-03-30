@@ -13,6 +13,10 @@ I build systems that do more than run — they prove correctness, surface failur
 My work sits at the intersection of distributed systems reliability, Kubernetes resilience, incident forensics, and ML evaluation infrastructure, with an emphasis on formal correctness guarantees, evidence-backed validation and production-minded operator tooling.
 
 ---
+## Focus Areas
+
+Backend infrastructure · Distributed systems · Reliability engineering · Incident analysis · Developer tooling
+---
 
 ## Featured Projects
 
