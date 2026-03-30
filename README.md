@@ -16,17 +16,17 @@ My work sits at the intersection of distributed systems reliability, Kubernetes 
 ## Focus Areas
 
 Backend infrastructure · Distributed systems · Reliability engineering · Incident analysis · Developer tooling
+
 ---
 
 ## Featured Projects
 
-| Project | What It Does |
+| Project | What It Proves |
 |---|---|
-| [**Faultline**](https://github.com/kritibehl/faultline) | Crash-safe distributed job execution with fencing tokens and lease-based recovery, validated across 1,500 deterministic race reproductions |
-| [**FairEval-Suite**](https://github.com/kritibehl/FairEval-Suite) | CI-integrated regression gating for GenAI systems that detects silent behavior drift across model, prompt, retrieval, and inference changes before deployment |
-| [**AutoOps-Insight**](https://github.com/kritibehl/AutoOps-Insight) | Operator-facing incident triage that classifies failure logs, fingerprints recurring signatures, previews rule-change impact, and generates release-risk reports |
-| [**DetTrace**](https://github.com/kritibehl/dettrace) | Distributed incident forensics that reconstructs cross-service failure timelines, identifies the first failing hop, infers blast radius, and semantically diffs regressions |
-| [**KubePulse**](https://github.com/kritibehl/KubePulse) | Kubernetes resilience validation that measures real recovery behavior, catches readiness false positives, and produces scorecarded reports before rollout |
+| [Faultline](https://github.com/kritibehl/faultline) | Crash-safe distributed job execution with fencing tokens, lease recovery, and deterministic race validation |
+| [KubePulse](https://github.com/kritibehl/KubePulse) | Kubernetes resilience validation with recovery measurement, probe-integrity checks, and rollout scorecards |
+| [AutoOps-Insight](https://github.com/kritibehl/AutoOps-Insight) | Operator-facing incident triage, recurring signature detection, and release-risk reporting |
+| [DetTrace](https://github.com/kritibehl/dettrace) | Deterministic replay and incident forensics for first-failure and blast-radius analysis |
 
 ---
 
@@ -44,19 +44,10 @@ Selected writing:
   
 ---
 
-## What I Care About
-
-- Correctness that holds under real failure conditions, not just happy paths
-- Validation infrastructure that gives teams evidence, not just confidence
-- Operator tooling that makes repeated incidents cheaper to triage and safer to fix
-- Building systems where "it passed" means something specific and reproducible
-
----
-
 ## Connect
 
 [LinkedIn](https://linkedin.com/in/kritibehl) · [GitHub](https://github.com/kritibehl) · [Medium](https://medium.com/@kriti0608) · kriti0608@gmail.com
 
 ---
 
-*If you work on distributed systems, reliability, platform engineering, or AI infrastructure, start with Faultline or FairEval.*
+*If you're hiring for backend, infrastructure, reliability or production engineering roles, start with Faultline and KubePulse.*
