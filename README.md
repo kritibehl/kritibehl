@@ -1,19 +1,23 @@
 # Kriti Behl
 
-Software engineer focused on backend infrastructure, distributed systems and reliability.
+I build backend and distributed systems that stay correct under failure and make failures easier to diagnose.
 
-Built production backend systems at Thales Group, contributed merged fixes to the Temporal Go SDK, and developed systems around crash safety, resilience validation, incident analysis and release safety.
+Built production backend systems at Thales Group, contributed merged fixes to the Temporal Go SDK, and built systems with proof like 0 duplicate commits across 1,500 race reproductions and probe-healthy / system-unsafe detection under failure.
 
+**If you're hiring for backend, infrastructure, reliability, or production engineering roles, start here:**
+- [Faultline](https://github.com/kritibehl/faultline) — crash-safe job execution, fencing tokens, race validation
+- [KubePulse](https://github.com/kritibehl/KubePulse) — resilience validation, recovery measurement, unsafe-state detection
+- [Temporal Go SDK PRs](https://github.com/temporalio/sdk-go/pulls?q=is%3Apr+author%3Akritibehl) — merged OSS fixes in workflow/runtime behavior
 ---
 
-## Featured Projects
+## What these projects prove
 
-| Project | What It Proves |
+| Project | What it proves |
 |---|---|
-| [Faultline](https://github.com/kritibehl/faultline) | Crash-safe distributed job execution with fencing tokens, lease recovery, and deterministic race validation |
-| [KubePulse](https://github.com/kritibehl/KubePulse) | Kubernetes resilience validation with recovery measurement, probe-integrity checks, and rollout scorecards |
-| [AutoOps-Insight](https://github.com/kritibehl/AutoOps-Insight) | Operator-facing incident triage, recurring signature detection, and release-risk reporting |
-| [DetTrace](https://github.com/kritibehl/dettrace) | Deterministic replay and incident forensics for first-failure and blast-radius analysis |
+| [Faultline](https://github.com/kritibehl/faultline) | I can design execution systems that preserve correctness under crashes, lease expiry, and race conditions |
+| [KubePulse](https://github.com/kritibehl/KubePulse) | I can validate real recovery behavior, not just surface-level health signals |
+| [AutoOps-Insight](https://github.com/kritibehl/AutoOps-Insight) | I can turn noisy operational failures into structured incident signals and operator-facing decisions |
+| [DetTrace](https://github.com/kritibehl/dettrace) | I can isolate first-failure points and reconstruct divergent system behavior deterministically |
 
 ---
 ## Open Source Contributions
@@ -28,6 +32,21 @@ Built production backend systems at Thales Group, contributed merged fixes to th
 - [Detecting Silent Regressions in GenAI Systems at Scale](https://medium.com/@kriti0608/detecting-silent-regressions-in-genai-systems-at-scale-039ec03db1e4)
 
 ---
+## Why this profile is different
+
+Most entry-level profiles show projects that work.
+
+This profile is built around systems that are tested under:
+- crashes
+- retries
+- lease expiry
+- stale writes
+- degraded dependencies
+- misleading health signals
+
+The goal is not just building software that runs. It is building software that stays correct, exposes unsafe behavior, and leaves behind enough evidence to debug failures precisely.
+---
+
 ## Focus Areas
 
 Backend infrastructure · Distributed systems · Reliability engineering · Incident analysis · Developer tooling
