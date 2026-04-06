@@ -57,8 +57,4 @@ Backend infrastructure · Distributed systems · Reliability engineering · Inci
 [LinkedIn](https://linkedin.com/in/kritibehl) · [GitHub](https://github.com/kritibehl) · [Medium](https://medium.com/@kriti0608) · kriti0608@gmail.com
 
 ---
-   **KubePulse** — resilience validation, timing-aware diagnostics, and unsafe-state detection under faults
-
-3. diagnose failures precisely  
-   **DetTrace** — deterministic replay, first-divergence isolation, and replay-based debugging for concurrent, distributed, and control-loop systems
 \n
