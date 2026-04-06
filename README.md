@@ -57,17 +57,6 @@ Backend infrastructure · Distributed systems · Reliability engineering · Inci
 [LinkedIn](https://linkedin.com/in/kritibehl) · [GitHub](https://github.com/kritibehl) · [Medium](https://medium.com/@kriti0608) · kriti0608@gmail.com
 
 ---
-
-*If you're hiring for backend, infrastructure, reliability or production engineering roles, start with Faultline and KubePulse.*
-\n\n
-## What I build
-
-I build systems that:
-
-1. execute correctly under failure  
-   **Faultline** — crash-safe execution, replayable races, and correctness under partial failure
-
-2. detect unsafe system behavior  
    **KubePulse** — resilience validation, timing-aware diagnostics, and unsafe-state detection under faults
 
 3. diagnose failures precisely  
