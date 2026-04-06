@@ -57,4 +57,3 @@ Backend infrastructure · Distributed systems · Reliability engineering · Inci
 [LinkedIn](https://linkedin.com/in/kritibehl) · [GitHub](https://github.com/kritibehl) · [Medium](https://medium.com/@kriti0608) · kriti0608@gmail.com
 
 ---
-\n
