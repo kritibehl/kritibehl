@@ -88,13 +88,9 @@ Prevents silent regressions in AI systems before deployment.
 **Observability:** Prometheus, Grafana  
 
 ---
+![Kriti's GitHub stats](https://github-readme-stats.vercel.app/api?username=kritibehl&show_icons=true)
 
-## GitHub Stats
-
-![Kriti's GitHub stats](https://github-readme-stats.vercel.app/api?username=kritibehl&show_icons=true&theme=radical)
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=kritibehl&layout=compact&theme=radical)
-
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=kritibehl&layout=compact)
 ---
 
 ## Links
