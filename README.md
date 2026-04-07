@@ -92,7 +92,7 @@ Prevents silent regressions in AI systems before deployment.
 
 ![GitHub Stats](./profile/stats.svg)
 
-![Top Languages](./profile/top-langs.svg)
+![Top Languages](./profile/top-langs.svg) 
 ---
 
 ## Links
