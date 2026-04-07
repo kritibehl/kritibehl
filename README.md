@@ -1,59 +1,104 @@
 # Kriti Behl
 
-I build backend and distributed systems that stay correct under failure and make failures easier to diagnose.
+**Software Engineer — Distributed Systems, Reliability, and AI Release Safety**
 
-Built production backend systems at Thales Group, contributed merged fixes to the Temporal Go SDK, and built systems with proof like 0 duplicate commits across 1,500 race reproductions and probe-healthy / system-unsafe detection under failure.
-
-**If you're hiring for backend, infrastructure, reliability, or production engineering roles, start here:**
-- [Faultline](https://github.com/kritibehl/faultline) — crash-safe job execution, fencing tokens, race validation
-- [KubePulse](https://github.com/kritibehl/KubePulse) — resilience validation, recovery measurement, unsafe-state detection
-- [Temporal Go SDK PRs](https://github.com/temporalio/sdk-go/pulls?q=is%3Apr+author%3Akritibehl) — merged OSS fixes in workflow/runtime behavior
----
-
-## What these projects prove
-
-| Project | What it proves |
-|---|---|
-| [Faultline](https://github.com/kritibehl/faultline) | I can design execution systems that preserve correctness under crashes, lease expiry, and race conditions |
-| [KubePulse](https://github.com/kritibehl/KubePulse) | I can validate real recovery behavior, not just surface-level health signals |
-| [AutoOps-Insight](https://github.com/kritibehl/AutoOps-Insight) | I can turn noisy operational failures into structured incident signals and operator-facing decisions |
-| [DetTrace](https://github.com/kritibehl/dettrace) | I can isolate first-failure points and reconstruct divergent system behavior deterministically |
+I build systems that stay correct under failure.
 
 ---
-## Open Source Contributions
 
-- Temporal Go SDK: 2 merged PRs and 1 open PR across workflow test reliability and context propagation behavior
-- Azure Go SDK: 2 PRs under review in retry/error handling and trace context propagation
+## What I Work On
 
-## Selected Writing
+Most systems fail in subtle ways: race conditions, stale writes, false-healthy signals, silent regressions, and cascading failures.
 
-- [How I Built a Distributed Job Queue That Stays Correct Under Crashes, Races, and Network Faults](https://medium.com/@kriti0608/how-i-built-a-distributed-job-queue-that-stays-correct-under-crashes-races-and-network-faults-48bc50eec723)
--  [I Thought I Built Observability. Then an Incident Proved I Didn’t.](https://medium.com/@kriti0608/i-thought-i-built-observability-then-an-incident-proved-i-didnt-9b749e0d4ff3)
-- [Detecting Silent Regressions in GenAI Systems at Scale](https://medium.com/@kriti0608/detecting-silent-regressions-in-genai-systems-at-scale-039ec03db1e4)
+My work focuses on detecting, explaining, and preventing those failures before they reach production.
 
 ---
-## Why this profile is different
 
-Most entry-level profiles show projects that work.
+## Reliability Intelligence Stack
 
-This profile is built around systems that are tested under:
-- crashes
-- retries
-- lease expiry
-- stale writes
-- degraded dependencies
-- misleading health signals
+I’ve built a set of systems that together form a reliability and release-safety layer for distributed and AI systems:
 
-The goal is not just building software that runs. It is building software that stays correct, exposes unsafe behavior, and leaves behind enough evidence to debug failures precisely.
+### [Faultline — Distributed Correctness Engine](https://github.com/kritibehl/faultline)
+Crash-safe execution system with lease-based coordination, fencing tokens, and database-enforced correctness.
+
+- Exactly-once execution guarantees
+- Stale-write prevention
+- Global correctness auditor with near-miss race detection
+- Correctness heatmaps across execution history
+
+### [KubePulse — Resilience Validation System](https://github.com/kritibehl/KubePulse)
+Validates how systems behave under failure and detects when “healthy” systems are unsafe.
+
+- False-healthy detection
+- Latency and error drift analysis
+- Dependency-path degradation tracking
+- Rollout risk scoring and remediation planning
+
+### [DetTrace — Incident Intelligence Engine](https://github.com/kritibehl/dettrace)
+Replay-driven system for understanding how failures begin and propagate.
+
+- First-divergence isolation
+- Causal-chain reconstruction
+- Incident fingerprinting and similarity detection
+- Propagation-path prediction
+
+### [AutoOps Insight — Operational Decision Platform](https://github.com/kritibehl/AutoOps-Insight)
+Turns production failures into structured incidents and operator actions.
+
+- Failure classification and grouping
+- Recurrence tracking and correlation
+- Rollback / escalate / ignore decision automation
+- Blast radius estimation and ownership routing
+
+### [FairEval — AI Release Control System](https://github.com/kritibehl/FairEval-Suite)
+Prevents silent regressions in AI systems before deployment.
+
+- Baseline vs candidate comparison
+- Production-aware gating
+- Release blocking decisions
+- CI-integrated evaluation pipeline
+
 ---
 
-## Focus Areas
+## Featured Repositories
 
-Backend infrastructure · Distributed systems · Reliability engineering · Incident analysis · Developer tooling
+- [Faultline](https://github.com/kritibehl/faultline)
+- [KubePulse](https://github.com/kritibehl/KubePulse)
+- [DetTrace](https://github.com/kritibehl/dettrace)
+- [AutoOps Insight](https://github.com/kritibehl/AutoOps-Insight)
+- [FairEval Suite](https://github.com/kritibehl/FairEval-Suite)
 
 ---
-## Connect
 
-[LinkedIn](https://linkedin.com/in/kritibehl) · [GitHub](https://github.com/kritibehl) · [Medium](https://medium.com/@kriti0608) · kriti0608@gmail.com
+## What I Care About
+
+- Correctness under failure
+- Distributed systems and backend infrastructure
+- Incident reconstruction and failure analysis
+- Reliability engineering and release safety
 
 ---
+
+## Tech Stack
+
+**Languages:** C++, Go, Python, JavaScript, Java, SQL  
+**Backend:** FastAPI, Flask, Node.js, Express  
+**Infra:** Docker, Kubernetes, AWS, Azure  
+**Databases:** PostgreSQL, SQLite, MongoDB, Redis  
+**Observability:** Prometheus, Grafana  
+
+---
+
+## GitHub Stats
+
+![Kriti's GitHub stats](https://github-readme-stats.vercel.app/api?username=kritibehl&show_icons=true&theme=radical)
+
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=kritibehl&layout=compact&theme=radical)
+
+---
+
+## Links
+
+- [Portfolio](https://kriti-portfolio-six.vercel.app)
+- [LinkedIn](https://linkedin.com/in/kriti-behl)
+- [GitHub](https://github.com/kritibehl)
