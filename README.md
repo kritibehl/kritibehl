@@ -91,7 +91,7 @@ Prevents silent regressions in AI systems before deployment.
 ## GitHub Stats
 
 ![GitHub Stats](https://github-readme-streak-stats.herokuapp.com/?user=kritibehl)
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=kritibehl)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=kritibehl&layout=compact&cache_seconds=10)
 ---
 
 ## Links
