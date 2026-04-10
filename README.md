@@ -1,6 +1,6 @@
 # Kriti Behl
 
-**Software Engineer — Distributed Systems, Reliability, and AI Release Safety**
+**Software Engineer — Distributed Systems, Reliability and AI Release Safety**
 
 I build systems that stay correct under failure.
 
@@ -8,7 +8,7 @@ I build systems that stay correct under failure.
 
 ## What I Work On
 
-Most systems fail in subtle ways: race conditions, stale writes, false-healthy signals, silent regressions, and cascading failures.
+Most systems fail in subtle ways: race conditions, stale writes, false-healthy signals, silent regressions and cascading failures.
 
 My work focuses on detecting, explaining, and preventing those failures before they reach production.
 
