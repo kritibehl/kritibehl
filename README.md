@@ -75,11 +75,11 @@ LLM regression gating system — evaluates model candidates, detects silent regr
 
 ---
 
-### [Postmortem Atlas](https://github.com/kritibehl/postmortem-atlas) — Structured outage intelligence
+### [AgentGrid-Demo](https://github.com/kritibehl/agentgrid-demo) — Agentic document triage
 
-Real production postmortems (Cloudflare, GitHub, AWS, Discord, Notion, Stripe) normalized into a searchable reliability dataset — mapped to proactive validation strategies.
+LangGraph agentic workflow that classifies construction and project documents, extracts operational risks, and routes each document to the right owner with a structured action plan — demonstrating multi-step agent execution over a real document processing pipeline.
 
-`Python` `JSON Schema` `GitHub Pages`
+`Python` `LangGraph`
 
 ---
 
