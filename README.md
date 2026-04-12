@@ -1,102 +1,141 @@
+<div align="center">
+
 # Kriti Behl
 
-**Software Engineer — Distributed Systems, Reliability and AI Release Safety**
+**Backend · Distributed Systems · Reliability Engineering**
 
-I build systems that stay correct under failure.
+*MS Computer & Information Science, University of Florida (Dec 2025) · GPA 3.8*
 
----
+[![Portfolio](https://img.shields.io/badge/Portfolio-kriti--portfolio--six.vercel.app-000000?style=flat-square&logo=vercel&logoColor=white)](https://kriti-portfolio-six.vercel.app)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-kriti--behl-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/kriti-behl)
+[![Medium](https://img.shields.io/badge/Writing-Medium-000000?style=flat-square&logo=medium&logoColor=white)](https://medium.com/@kriti0608)
+[![HuggingFace](https://img.shields.io/badge/Demo-Hugging%20Face-FFD21E?style=flat-square&logo=huggingface&logoColor=black)](https://huggingface.co/kriti0608)
 
-## What I Work On
-
-Most systems fail in subtle ways: race conditions, stale writes, false-healthy signals, silent regressions and cascading failures.
-
-My work focuses on detecting, explaining, and preventing those failures before they reach production.
-
----
-
-## Reliability Intelligence Stack
-
-I’ve built a set of systems that together form a reliability and release-safety layer for distributed and AI systems:
-
-### [Faultline — Distributed Correctness Engine](https://github.com/kritibehl/faultline)
-Crash-safe execution system with lease-based coordination, fencing tokens, and database-enforced correctness.
-
-- Exactly-once execution guarantees
-- Stale-write prevention
-- Global correctness auditor with near-miss race detection
-- Correctness heatmaps across execution history
-
-### [KubePulse — Resilience Validation System](https://github.com/kritibehl/KubePulse)
-Validates how systems behave under failure and detects when “healthy” systems are unsafe.
-
-- False-healthy detection
-- Latency and error drift analysis
-- Dependency-path degradation tracking
-- Rollout risk scoring and remediation planning
-
-### [DetTrace — Incident Intelligence Engine](https://github.com/kritibehl/dettrace)
-Replay-driven system for understanding how failures begin and propagate.
-
-- First-divergence isolation
-- Causal-chain reconstruction
-- Incident fingerprinting and similarity detection
-- Propagation-path prediction
-
-### [AutoOps Insight — Operational Decision Platform](https://github.com/kritibehl/AutoOps-Insight)
-Turns production failures into structured incidents and operator actions.
-
-- Failure classification and grouping
-- Recurrence tracking and correlation
-- Rollback / escalate / ignore decision automation
-- Blast radius estimation and ownership routing
-
-### [FairEval — AI Release Control System](https://github.com/kritibehl/FairEval-Suite)
-Prevents silent regressions in AI systems before deployment.
-
-- Baseline vs candidate comparison
-- Production-aware gating
-- Release blocking decisions
-- CI-integrated evaluation pipeline
+</div>
 
 ---
 
-## Featured Repositories
+## What I build
 
-- [Faultline](https://github.com/kritibehl/faultline)
-- [KubePulse](https://github.com/kritibehl/KubePulse)
-- [DetTrace](https://github.com/kritibehl/dettrace)
-- [AutoOps Insight](https://github.com/kritibehl/AutoOps-Insight)
-- [FairEval Suite](https://github.com/kritibehl/FairEval-Suite)
+Systems that stay correct under failure — and tools that prove it.
+
+Production backend experience at Thales Group. Merged PRs in the Temporal Go SDK. Projects focused on one question: **what actually breaks, how do you know, and how do you prove it didn't happen twice?**
 
 ---
 
-## What I Care About
+## Projects
 
-- Correctness under failure
-- Distributed systems and backend infrastructure
-- Incident reconstruction and failure analysis
-- Reliability engineering and release safety
+### [Faultline](https://github.com/kritibehl/faultline) — Distributed correctness under failure
+
+Crash-safe job execution system enforcing exactly-once semantics through fencing tokens and database-level invariant validation.
+
+**The benchmark:** 0.0% duplicate commits at 5%, 10%, and 20% fault injection rates — versus 1.0–2.5% in naive lease-only systems across 200-job runs. 1,500+ simulated failure scenarios. Zero invariant violations.
+
+**The finding:** Nearly 46% of execution time is coordination overhead. Measured, not assumed.
+
+`Python` `PostgreSQL` `Prometheus` `OpenTelemetry` `Docker`
+
+---
+
+### [KubePulse](https://github.com/kritibehl/KubePulse) — When probes lie
+
+Kubernetes resilience validation system that detects probe-level false positives and blocks unsafe deployments.
+
+**Demonstrated:** `probes_say_healthy=true`, `safe_to_operate=false`, `recommendation_action=block` — with p95 latency at 780ms (+333% drift), p99 at 1200ms (+275% drift), 8% error rate, resilience score 46 — while readiness probes stayed green.
+
+**Infrastructure:** Terraform-provisioned AWS EKS. CI-integrated resilience gate. AI service scenario packs.
+
+`Python` `Kubernetes` `Prometheus` `Terraform` `GitHub Actions`
 
 ---
 
-## Tech Stack
+### [DetTrace](https://github.com/kritibehl/dettrace) — First-failure isolation
 
-**Languages:** C++, Go, Python, JavaScript, Java, SQL  
-**Backend:** FastAPI, Flask, Node.js, Express  
-**Infra:** Docker, Kubernetes, AWS, Azure  
-**Databases:** PostgreSQL, SQLite, MongoDB, Redis  
-**Observability:** Prometheus, Grafana  
+Deterministic replay and incident forensics system for concurrency and distributed failures.
+
+**What it does:** Records execution as an event sequence. Replays identically. Isolates first divergence at exact event-index granularity. Predicts downstream failure propagation. Learns patterns across incidents.
+
+**Demonstrated:** First divergence isolated at event index 5. Cross-incident similarity matching at 1.0 confidence. Control-loop replay across sensor fault, actuator saturation, and timing jitter scenarios.
+
+Swift companion with `async/await` and actor isolation for safe concurrent artifact analysis.
+
+`C++17` `Swift` `CMake` `JSONL`
 
 ---
-## GitHub Stats
 
-![GitHub Stats](./profile/stats.svg)
+### [FairEval](https://github.com/kritibehl/FairEval-Suite) — Release gating for AI systems
 
-![Top Languages](./profile/top-langs.svg) 
+LLM regression gating system — evaluates model candidates, detects silent regressions, and makes automated SHIP/BLOCK deployment decisions.
+
+**Run against Gemini Flash:** 0.367 avg score, 40% pass rate, gate decision: BLOCK. Live demo on Hugging Face. Technical report on Zenodo.
+
+`Python` `PyTorch` `FastAPI` `SciPy` `HuggingFace`
+
+&nbsp;&nbsp;[**Live demo →**](https://huggingface.co/spaces/kriti0608/FairEval-Suite) &nbsp;&nbsp; [**Research report →**](https://doi.org/10.5281/zenodo.17625268)
+
 ---
 
-## Links
+### [Postmortem Atlas](https://github.com/kritibehl/postmortem-atlas) — Structured outage intelligence
 
-- [Portfolio](https://kriti-portfolio-six.vercel.app)
-- [LinkedIn](https://linkedin.com/in/kriti-behl)
-- [GitHub](https://github.com/kritibehl)
+Real production postmortems (Cloudflare, GitHub, AWS, Discord, Notion, Stripe) normalized into a searchable reliability dataset — mapped to proactive validation strategies.
+
+`Python` `JSON Schema` `GitHub Pages`
+
+---
+
+### [AutoOps-Insight](https://github.com/kritibehl/AutoOps-Insight) — CI failure intelligence
+
+Operator-facing incident triage tool. Classifies CI failures into named families, generates stable fingerprints, detects recurrence, correlates with nearby changes, simulates rule changes, and generates rollout guidance.
+
+React dashboard · Fleet health views · Rule simulation · Power BI export.
+
+`Python` `FastAPI` `React` `PostgreSQL` `Alembic`
+
+---
+
+### [AccelSim-Lite](https://github.com/kritibehl/accelsim-lite) — Accelerator pipeline simulation
+
+Deterministic workload-level simulator: throughput (0.14–0.33 ops/cycle), latency (10–23.8 cycles), bottleneck transitions (WaitingDependency → NoMemoryPort → NoComputeUnit) across compute-heavy, memory-bound, and queue-pressure workloads. ~2.4× throughput degradation under memory pressure — the same behavior transformer inference sees under KV-cache bandwidth saturation.
+
+`C++` `CMake`
+
+---
+
+## Open Source
+
+Two merged PRs in the **Temporal Go SDK** (production durable-execution framework):
+
+- **[#2200](https://github.com/temporalio/sdk-go/pull/2200)** — Fixed goroutine leak in child-workflow test environment. Added `sync.Once` idempotent closure with regression test.
+- **[#2212](https://github.com/temporalio/sdk-go/pull/2212)** — Fixed `OnWorkflow` mock to observe propagated context headers.
+
+Two PRs under review in the **Azure Go SDK**.
+
+---
+
+## Writing
+
+Technical writing grounded in production systems — not career content.
+
+- [How I Built a Distributed Job Queue That Stays Correct Under Crashes, Races, and Network Faults](https://medium.com/@kriti0608/how-i-built-a-distributed-job-queue-that-stays-correct-under-crashes-races-and-network-faults-48bc50eec723)
+- [Detecting Silent Regressions in GenAI Systems at Scale](https://medium.com/@kriti0608/detecting-silent-regressions-in-genai-systems-at-scale-039ec03db1e4)
+- [I Thought I Built Observability. Then an Incident Proved I Didn't.](https://medium.com/@kriti0608/i-thought-i-built-observability-then-an-incident-proved-i-didnt-9b749e0d4ff3)
+- [FairEval: A Human-Aligned Evaluation Framework for Generative Models](https://medium.com/@kriti0608/faireval-a-human-aligned-evaluation-framework-for-generative-models-d822bfd5c99d)
+
+---
+
+## Stack
+
+```
+Languages:     Go · Python · C++17 · Swift · Java · TypeScript · SQL
+Backend:       FastAPI · Flask · Node.js/Express · REST APIs
+Storage:       PostgreSQL · Redis · MongoDB · SQLite
+Infrastructure: Docker · Kubernetes · AWS · Azure · Terraform · GitHub Actions
+Observability:  Prometheus · Grafana · OpenTelemetry · structured logging · fault injection
+Systems:       Distributed systems · fault tolerance · concurrency control · idempotency · deterministic replay
+```
+
+---
+
+<div align="center">
+<sub>Open to full-time SWE roles · Dec 2025 · OPT (STEM extension eligible) · Open to relocation</sub>
+</div>
