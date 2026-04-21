@@ -2,7 +2,7 @@
 
 # Kriti Behl
 
-**Backend · Distributed Systems · Reliability Engineering**
+**Backend · Distributed Systems · Reliability Engineering · AI Infrastructure**
 
 *MS Computer & Information Science, University of Florida (Dec 2025) · GPA 3.8*
 
@@ -19,11 +19,28 @@
 
 Systems that stay correct under failure — and tools that prove it.
 
-Production backend experience at Thales Group. Merged PRs in the Temporal Go SDK. Projects focused on one question: **what actually breaks, how do you know, and how do you prove it didn't happen twice?**
+Production backend experience at Thales Group. Three merged PRs in the Temporal Go SDK. Projects focused on one question: **what actually breaks, how do you know, and how do you prove it didn't happen twice?**
+
+Most recently: extended KubePulse to real GPU inference serving on AMD MI300X hardware — same rollout-gating pipeline, real ROCm/vLLM stack, real latency regression that triggered a block decision.
 
 ---
 
 ## Projects
+
+### [KubePulse](https://github.com/kritibehl/KubePulse) — Release safety for distributed systems and AI serving
+
+Kubernetes resilience validation system that detects probe-level false positives and blocks unsafe deployments. Extended to real GPU inference serving on AMD MI300X hardware.
+
+**Distributed systems result:** `probes_say_healthy=true`, `safe_to_operate=false`, `recommendation_action=block` — p95 latency at +333% drift, 8% error rate, resilience score 46 — readiness probes stayed green through all of it.
+
+**AI serving result (AMD MI300X):** baseline p95 200.76 ms → burst p95 1422.07 ms (+608.34% regression) under long-prompt load — ROCm/vLLM serving stack, Phi-3-mini-4k-instruct, block decision generated from measured latency behavior.
+
+[![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org)
+[![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)](https://kubernetes.io)
+[![AMD MI300X](https://img.shields.io/badge/AMD%20MI300X-ROCm%20%2B%20vLLM-ED1C24?style=flat-square&logo=amd&logoColor=white)](https://github.com/kritibehl/KubePulse/tree/main/amd_results)
+[![Terraform](https://img.shields.io/badge/Terraform-AWS%20EKS-7B42BC?style=flat-square&logo=terraform&logoColor=white)](https://terraform.io)
+
+---
 
 ### [Faultline](https://github.com/kritibehl/faultline) — Distributed correctness under failure
 
@@ -33,33 +50,7 @@ Crash-safe job execution system enforcing exactly-once semantics through fencing
 
 **The finding:** Nearly 46% of execution time is coordination overhead. Measured, not assumed.
 
-`Python` `PostgreSQL` `Prometheus` `OpenTelemetry` `Docker`
-
----
-
-### [KubePulse](https://github.com/kritibehl/KubePulse) — When probes lie
-
-Kubernetes resilience validation system that detects probe-level false positives and blocks unsafe deployments.
-
-**Demonstrated:** `probes_say_healthy=true`, `safe_to_operate=false`, `recommendation_action=block` — with p95 latency at 780ms (+333% drift), p99 at 1200ms (+275% drift), 8% error rate, resilience score 46 — while readiness probes stayed green.
-
-**Infrastructure:** Terraform-provisioned AWS EKS. CI-integrated resilience gate. AI service scenario packs.
-
-`Python` `Kubernetes` `Prometheus` `Terraform` `GitHub Actions`
-
----
-
-### [DetTrace](https://github.com/kritibehl/dettrace) — First-failure isolation
-
-Deterministic replay and incident forensics system for concurrency and distributed failures.
-
-**What it does:** Records execution as an event sequence. Replays identically. Isolates first divergence at exact event-index granularity. Predicts downstream failure propagation. Learns patterns across incidents.
-
-**Demonstrated:** First divergence isolated at event index 5. Cross-incident similarity matching at 1.0 confidence. Control-loop replay across sensor fault, actuator saturation, and timing jitter scenarios.
-
-Swift companion with `async/await` and actor isolation for safe concurrent artifact analysis.
-
-`C++17` `Swift` `CMake` `JSONL`
+`Go` `PostgreSQL` `Docker`
 
 ---
 
@@ -75,19 +66,21 @@ LLM regression gating system — evaluates model candidates, detects silent regr
 
 ---
 
-### [AgentGrid-Demo](https://github.com/kritibehl/agentgrid-demo) — Agentic document triage
+### [DetTrace](https://github.com/kritibehl/dettrace) — First-failure isolation
 
-LangGraph agentic workflow that classifies construction and project documents, extracts operational risks, and routes each document to the right owner with a structured action plan — demonstrating multi-step agent execution over a real document processing pipeline.
+Deterministic replay and incident forensics system for concurrency and distributed failures.
 
-`Python` `LangGraph`
+**What it does:** Records execution as an event sequence. Replays identically. Isolates first divergence at exact event-index granularity. Predicts downstream failure propagation.
+
+**Demonstrated:** First divergence isolated at event index 5. Cross-incident similarity matching at 1.0 confidence.
+
+`C++17` `Swift` `CMake`
 
 ---
 
 ### [AutoOps-Insight](https://github.com/kritibehl/AutoOps-Insight) — CI failure intelligence
 
-Operator-facing incident triage tool. Classifies CI failures into named families, generates stable fingerprints, detects recurrence, correlates with nearby changes, simulates rule changes, and generates rollout guidance.
-
-React dashboard · Fleet health views · Rule simulation · Power BI export.
+Operator-facing incident triage tool. Classifies CI failures into named families, generates stable fingerprints, detects recurrence, and generates rollout guidance.
 
 `Python` `FastAPI` `React` `PostgreSQL` `Alembic`
 
@@ -95,18 +88,27 @@ React dashboard · Fleet health views · Rule simulation · Power BI export.
 
 ### [AccelSim-Lite](https://github.com/kritibehl/accelsim-lite) — Accelerator pipeline simulation
 
-Deterministic workload-level simulator: throughput (0.14–0.33 ops/cycle), latency (10–23.8 cycles), bottleneck transitions (WaitingDependency → NoMemoryPort → NoComputeUnit) across compute-heavy, memory-bound, and queue-pressure workloads. ~2.4× throughput degradation under memory pressure — the same behavior transformer inference sees under KV-cache bandwidth saturation.
+Deterministic workload-level simulator: throughput (0.14–0.33 ops/cycle), latency (10–23.8 cycles), bottleneck transitions across compute-heavy, memory-bound, and queue-pressure workloads. ~2.4× throughput degradation under memory pressure — the same behavior transformer inference sees under KV-cache bandwidth saturation.
 
 `C++` `CMake`
 
 ---
 
+### [AgentGrid-Demo](https://github.com/kritibehl/agentgrid-demo) — Agentic document triage
+
+LangGraph agentic workflow that classifies documents, extracts operational risks, and routes each to the right owner with a structured action plan.
+
+`Python` `LangGraph`
+
+---
+
 ## Open Source
 
-Two merged PRs in the **Temporal Go SDK** (production durable-execution framework):
+Three merged PRs in the **Temporal Go SDK** (production durable-execution framework):
 
-- **[#2200](https://github.com/temporalio/sdk-go/pull/2200)** — Fixed goroutine leak in child-workflow test environment. Added `sync.Once` idempotent closure with regression test.
-- **[#2212](https://github.com/temporalio/sdk-go/pull/2212)** — Fixed `OnWorkflow` mock to observe propagated context headers.
+- **[#2200](https://github.com/temporalio/sdk-go/pull/2200)** — Tracked down a resource leak in the Go SDK test runtime; goroutines were silently accumulating on certain exit paths, causing flaky test behavior; fixed the shutdown sequence and added leak detection to the regression suite.
+- **[#2212](https://github.com/temporalio/sdk-go/pull/2212)** — Fixed a silent correctness bug in workflow mock testing; propagation headers were missing during matcher evaluation, so tests passed incorrectly; added a regression test that reliably catches the failure.
+- **[#2298](https://github.com/temporalio/sdk-go/pull/2298)** — Fixed a concurrency bug in async future chaining where a future could report ready while callers were still blocked; corrected the completion path to properly unblock waiters and propagate results to dependent futures.
 
 Two PRs under review in the **Azure Go SDK**.
 
@@ -126,12 +128,13 @@ Technical writing grounded in production systems — not career content.
 ## Stack
 
 ```
-Languages:     Go · Python · C++17 · Swift · Java · TypeScript · SQL
-Backend:       FastAPI · Flask · Node.js/Express · REST APIs
-Storage:       PostgreSQL · Redis · MongoDB · SQLite
+Languages:      Go · Python · C++17 · Swift · Java · TypeScript · SQL
+Backend:        FastAPI · Flask · Node.js/Express · REST APIs · vLLM
+Storage:        PostgreSQL · Redis · MongoDB · SQLite
 Infrastructure: Docker · Kubernetes · AWS · Azure · Terraform · GitHub Actions
+Hardware:       AMD MI300X · ROCm
 Observability:  Prometheus · Grafana · OpenTelemetry · structured logging · fault injection
-Systems:       Distributed systems · fault tolerance · concurrency control · idempotency · deterministic replay
+Systems:        Distributed systems · fault tolerance · concurrency control · idempotency · AI serving validation
 ```
 
 ---
