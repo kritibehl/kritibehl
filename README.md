@@ -10,7 +10,7 @@
 ╚══════════════════════════════════════════════════════════════════╝
 ```
 
-[![Temporal SDK](https://img.shields.io/badge/Temporal_Go_SDK-3_merged_PRs-3fb950?style=flat-square&logo=go&logoColor=white)](https://github.com/temporalio/sdk-go/pulls?q=author%3Akritibehl)
+[![Temporal SDK](https://img.shields.io/badge/Temporal_Go_SDK-4_merged_PRs-3fb950?style=flat-square&logo=go&logoColor=white)](https://github.com/temporalio/sdk-go/pulls?q=author%3Akritibehl)
 [![Azure SDK](https://img.shields.io/badge/Azure_Go_SDK-2_PRs_in_review-d29922?style=flat-square&logo=microsoftazure&logoColor=white)](https://github.com/Azure/azure-sdk-for-go/pulls?q=author%3Akritibehl)
 [![UF](https://img.shields.io/badge/M.S._UF-GPA_3.8-58a6ff?style=flat-square)](https://www.cise.ufl.edu/)
 [![Open to work](https://img.shields.io/badge/open_to-relocation-a5a6f6?style=flat-square)]()
