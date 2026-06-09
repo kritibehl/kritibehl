@@ -11,7 +11,7 @@
 ```
 
 [![Temporal SDK](https://img.shields.io/badge/Temporal_Go_SDK-4_merged_PRs-3fb950?style=flat-square&logo=go&logoColor=white)](https://github.com/temporalio/sdk-go/pulls?q=author%3Akritibehl)
-[![Azure SDK](https://img.shields.io/badge/Azure_Go_SDK-2_PRs_in_review-d29922?style=flat-square&logo=microsoftazure&logoColor=white)](https://github.com/Azure/azure-sdk-for-go/pulls?q=author%3Akritibehl)
+[![Azure SDK](https://img.shields.io/badge/Azure_Go_SDK-1_merged_1_in_review-d29922?style=flat-square&logo=microsoftazure&logoColor=white)](https://github.com/Azure/azure-sdk-for-go/pulls?q=author%3Akritibehl)
 [![UF](https://img.shields.io/badge/M.S._UF-GPA_3.8-58a6ff?style=flat-square)](https://www.cise.ufl.edu/)
 [![Open to work](https://img.shields.io/badge/open_to-relocation-a5a6f6?style=flat-square)]()
 
@@ -38,7 +38,7 @@
 [2026-03-02]  PR #2200  MERGED  Temporal Go SDK  fix: goroutine leak in test runtime shutdown
 [2026-03-12]  PR #2212  MERGED  Temporal Go SDK  fix: propagation headers missing in mock matcher
 [2026-04-20]  PR #2298  MERGED  Temporal Go SDK  fix: async future reports ready while callers blocked
-[in review ]  PR #26051 REVIEW  Azure Go SDK     fix: azcore retry policy, errors.Join
+[2026-04-28]  PR #26051 MERGED  Azure Go SDK     fix: azcore retry policy, errors.Join
 [in review ]  PR #26106 REVIEW  Azure Go SDK     feat: W3C Trace Context (traceparent/tracestate)
 ```
 
