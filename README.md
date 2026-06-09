@@ -22,11 +22,13 @@
 | project | what it catches | stack | proof |
 |---|---|---|---|
 | **[Faultline](https://github.com/kritibehl/faultline)** | stale workers corrupting distributed job state | Go · PostgreSQL · Docker | `0.0%` duplicate commits vs `1.0–2.5%` naive · 1,500+ failure scenarios · 0 invariant violations |
-| **[KubePulse](https://github.com/kritibehl/KubePulse)** | deployment regressions that health probes miss | Go · Terraform · K8s · Prometheus | p95 drifted `333%` with probes still green · blocked AMD MI300X rollout at `+608%` latency regression |
-| **[DetTrace++](https://github.com/kritibehl/dettrace)** | the exact event where a system became incorrect | Python · Go · C++17 · Swift | UART IRQ · timer missed-tick · GPIO race · retry storms · cascading failures |
-| **[FairEval-Suite](https://github.com/kritibehl/FairEval-Suite)** | AI models that regress under real serving load | Python · Gemini API | blocked candidate with `47.1%` p95 regression despite score parity · live on HuggingFace |
-| **[AutoOps-Insight](https://github.com/kritibehl/AutoOps-Insight)** | recurring CI failures before they hit production | Python · PostgreSQL · React | pattern-grouped failures · confidence-scored release decisions |
-| **[AccelSim-Lite](https://github.com/kritibehl/accelsim-lite)** | throughput and latency bottleneck transitions | C++ · Python | `87%` throughput gain · `39%` latency reduction · bottleneck shift proven via what-if |
+| **[KubePulse](https://github.com/kritibehl/KubePulse)** | deployment regressions that health probes miss | Go · Terraform · K8s · Prometheus | p95 drifted `+333%` with probes still green · 5 scenarios · 0 false-safe decisions |
+| **[DetTrace](https://github.com/kritibehl/dettrace)** | the exact event where a system became incorrect | C++17 · Swift · Python · Go | 20 I/O transport scenarios · 10,000+ validations · confidence 0.93 · 0 false positives |
+| **[AgentGrid](https://github.com/kritibehl/agentgrid-demo)** | silent failures in AI retrieval and tool execution | Python · FastAPI · React | retrieval 80% · tools 80% · p95 880ms · eval gates + human review |
+| **[FairEval](https://github.com/kritibehl/FairEval-Suite)** | AI models that regress under real serving load | Python · FastAPI · SciPy | 16 false allows prevented · blocked `+47.1%` p95 regression despite score parity |
+| **[Enterprise Process Lab](https://github.com/kritibehl/enterprise-process-lab)** | ERP integration failures and controls violations | Python · ABAP Reporting · pytest | SAP → Oracle → ServiceNow → Workday · 4 integrations · 5 controls · DO_NOT_RELEASE |
+| **[AccelSim-Lite](https://github.com/kritibehl/accelsim-lite)** | throughput and latency bottleneck transitions | C++17 · CMake · GoogleTest | `3.64×` optimization speedup · `+51.22%` p95 regression detected and gated |
+| **[AutoOps-Insight](https://github.com/kritibehl/AutoOps-Insight)** | CI/CD failures before they reach production | Python · FastAPI · React · Scikit-learn | 12 customers at risk · `+40%` escalation growth · DependencyError classified |
 
 ---
 
@@ -47,13 +49,16 @@
 ```
 > I build systems that reason about when other systems are wrong.
 
-  Faultline   ── proves correctness when distributed workers fail
-  KubePulse   ── catches regressions that health probes never see
-  DetTrace++  ── isolates the exact event where behavior became wrong
-  FairEval    ── blocks AI releases that regress under real serving load
-  AutoOps     ── detects CI failures before they become production outages
+  Faultline             ── proves correctness when distributed workers fail
+  KubePulse             ── catches regressions that health probes never see
+  DetTrace              ── isolates the exact event where behavior became wrong
+  AgentGrid             ── makes AI agent behavior observable and gateable
+  FairEval              ── blocks AI releases that regress under real serving load
+  Enterprise Process Lab── validates ERP integrations and controls compliance
+  AccelSim-Lite         ── names the bottleneck and gates the regression
+  AutoOps-Insight       ── detects CI failures before they become production outages
 
-  M.S. Computer & Information Science · University of Florida · GPA 3.8 ▌
+  M.S. Computer & Information Science · University of Florida · GPA 3.8
 ```
 
 ---
@@ -63,23 +68,25 @@
 ```ini
 [languages]
 primary  = Go
-other    = Python, Java, C++, SQL, Bash, JavaScript
+other    = Python, C++17, Swift, Java, SQL, Bash, JavaScript
 
 [backend]
-apis     = REST, Node.js, Express, PostgreSQL
-patterns = fault injection, fencing tokens, distributed job execution
+apis     = REST, FastAPI, Node.js, Express, PostgreSQL
+patterns = fault injection, fencing tokens, distributed job execution,
+           idempotency, transactional correctness, ERP integrations
 
 [infrastructure]
 cloud    = AWS (EKS, ECS, VPC)
 tools    = Kubernetes, Terraform, Docker, Git, GitHub Actions
 
 [observability]
-stack    = Prometheus, Grafana, Datadog
-practice = SLO enforcement, incident response, replay-based debugging
+stack    = Prometheus, Grafana, Datadog, OpenTelemetry
+practice = SLO enforcement, incident response, replay-based debugging,
+           release gating, eval ops
 
 [focus]
 core     = correctness under failure, resilience validation,
-           deterministic replay, firmware-style trace analysis
+           deterministic replay, AI reliability, enterprise systems
 ```
 
 ---
@@ -91,9 +98,9 @@ email      kriti0608@gmail.com
 linkedin   linkedin.com/in/kriti-behl
 portfolio  kriti-portfolio-six.vercel.app
 location   Gainesville FL → open to full relocation
-status     actively searching · SRE / Backend / Infra · OPT/STEM OPT
+status     actively searching · SRE / Backend / Infra / Enterprise Apps · OPT/STEM OPT
 ```
 
 ---
 
-<sub>Seeking SRE · Backend · Infrastructure · Platform roles · M.S. completed Dec 2025</sub>
+<sub>Seeking SRE · Backend · Infrastructure · Platform · Enterprise Applications roles · M.S. completed Dec 2025</sub>
