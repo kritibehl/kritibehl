@@ -97,7 +97,7 @@ core     = correctness under failure, resilience validation,
 email      kriti0608@gmail.com
 linkedin   linkedin.com/in/kriti-behl
 portfolio  kriti-portfolio-six.vercel.app
-location   Gainesville FL → open to full relocation
+location   Chicago IL → open to full relocation
 status     actively searching · SRE / Backend / Infra / Enterprise Apps · OPT/STEM OPT
 ```
 
