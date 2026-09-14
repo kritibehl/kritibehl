@@ -5,7 +5,7 @@
 ### Software Engineer | Backend · Distributed Systems · Reliability
 
 **M.S. Computer Science, University of Florida** · Dec 2025 · GPA 3.8
-📍 Chicago, IL · Open to relocation, US-wide
+📍 Chicago, IL 
 
 [![Temporal Go SDK](https://img.shields.io/badge/Temporal_Go_SDK-7_merged_PRs-3fb950?style=for-the-badge&logo=go&logoColor=white)](https://github.com/temporalio/sdk-go/pulls?q=author%3Akritibehl)
 [![Azure SDK](https://img.shields.io/badge/Azure_Go_SDK-1_merged_1_in_review-d29922?style=for-the-badge&logo=microsoftazure&logoColor=white)](https://github.com/Azure/azure-sdk-for-go/pulls?q=author%3Akritibehl)
