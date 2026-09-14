@@ -55,6 +55,7 @@ if you_read_one_thing:
 
 <img height="165" src="https://github-readme-stats.vercel.app/api?username=kritibehl&show_icons=true&theme=github_dark&hide_border=true&count_private=true" />
 <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=kritibehl&layout=compact&theme=github_dark&hide_border=true" />
+/> <img src="https://github-readme-streak-stats.herokuapp.com/?user=kritibehl&theme=github-dark-blue&hide_border=true&hide_current_streak=true" /> </div>
 </div>
 
 
