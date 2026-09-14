@@ -60,7 +60,7 @@ if you_read_one_thing:
 
 </div>
 
-> Note: these are live cards pulled from the GitHub API by third-party services (github-readme-stats / streak-stats) — they render whatever your actual public activity is at page-load time, not a fixed number. Worth glancing at them yourself after publishing to confirm they're rendering correctly (they occasionally have outages).
+
 
 ---
 
