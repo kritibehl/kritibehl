@@ -91,7 +91,6 @@ I don't just build my own systems — I've shipped fixes into ones other enginee
 
 ## 🛠️ Selected Projects
 
-> Four systems. One thread: **what happens when things fail, and how do you prove it stayed correct.**
 
 ### 🧱 [Faultline](https://github.com/kritibehl/faultline) — distributed job execution correctness
 
