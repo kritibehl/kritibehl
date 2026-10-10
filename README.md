@@ -9,6 +9,7 @@
 
 [![Temporal Go SDK](https://img.shields.io/badge/Temporal_Go_SDK-7_merged_PRs-3fb950?style=for-the-badge&logo=go&logoColor=white)](https://github.com/temporalio/sdk-go/pulls?q=author%3Akritibehl)
 [![Azure SDK](https://img.shields.io/badge/Azure_Go_SDK-1_merged_1_in_review-d29922?style=for-the-badge&logo=microsoftazure&logoColor=white)](https://github.com/Azure/azure-sdk-for-go/pulls?q=author%3Akritibehl)
+[![Women Techmakers](https://img.shields.io/badge/Women_Techmakers-Ambassador_2026-e91e63?style=for-the-badge)](https://womentechmakers.com/)
 [![University of Florida](https://img.shields.io/badge/M.S._Computer_Science-UF-58a6ff?style=for-the-badge)](https://www.cise.ufl.edu/)
 
 *I build backend and infrastructure systems that stay correct when failures, concurrency, and regressions make behavior hard to reason about.*
