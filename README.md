@@ -42,8 +42,8 @@ if you_read_one_thing:
 <div align="center">
 <table><tr>
 <td align="center"><b>7</b><br><sub>merged Temporal PRs</sub></td>
-<td align="center"><b>1,500+</b><br><sub>failure scenarios · Faultline</sub></td>
-<td align="center"><b>0.93</b><br><sub>root-cause confidence · DetTrace</sub></td>
+<td align="center"><b>52</b><br><sub>tests · Faultline</sub></td>
+<td align="center"><b>+181%</b><br><sub>p95 regression caught · DetTrace</sub></td>
 <td align="center"><b>+333%</b><br><sub>p95 spike caught · KubePulse</sub></td>
 </tr></table>
 </div>
@@ -95,21 +95,21 @@ I don't just build my own systems — I've shipped fixes into ones other enginee
 
 ### 🧱 [Faultline](https://github.com/kritibehl/faultline) — distributed job execution correctness
 
-**`0.0%` duplicate commits across `1,500+` injected failures — vs. `12` on a naive queue under the same load.**
+**Fencing alone still produced `2` duplicate charges when a worker was killed mid-remote-call. Idempotency produced `1`. Measured across a 4-strategy matrix on real Celery, Redis, and PostgreSQL.**
 
 <details>
 <summary>How it works ↓</summary>
 <br>
 
-Lease-based job systems have a hole: lease expiry stops the *next* worker from starting — it doesn't stop the *old* worker from writing late after it recovers from a crash. That stale write is what corrupts ledgers and causes double-charges.
+Fencing tokens stop a *stale* owner from committing late, but they can't help when the new owner is legitimate and the real question is whether a remote side effect already happened. Faultline injects real `SIGSTOP`/`SIGKILL` faults into live workers, runs each failure against naive, fencing, idempotency, and fencing+idempotency strategies, and checks explicit invariants after recovery.
 
-Faultline closes the hole at the **database boundary**, not in app logic — a `UNIQUE(job_id, fencing_token)` constraint in Postgres means a recovered worker holding a stale token gets rejected by the DB itself. Each claim increments a token; a late commit from an old token is rejected because it's no longer the newest one, full stop.
+In the ambiguous-remote scenario, a worker is killed after a remote charge succeeds but before it learns the result. Naive and fencing-only both end with 2 external charges (fencing accepted both commits, since the second worker was a legitimate owner). Idempotency and fencing+idempotency end with 1 charge and 1 suppressed duplicate. 52 tests, two adapters (Celery, BullMQ), four invariant checkers.
 
-Ships with a reconciler that repairs incomplete jobs, a Go inspector API for live lease-risk state, and Prometheus/OTEL instrumentation for stale-rejection rate and claim latency.
+Scope is deliberately narrow: no claim of universal exactly-once execution, linearizability proofs, or production certification of Celery, BullMQ, or Redis.
 
 </details>
 
-`Python (primary)` `Go (inspector API)` `PostgreSQL` `Docker` `Prometheus` `OpenTelemetry`
+`Python` `Celery` `BullMQ` `Redis` `PostgreSQL` `Docker Compose`
 
 ---
 
@@ -133,21 +133,21 @@ Underneath the Kubernetes layer is a real networking lab: a two-AS eBGP topology
 
 ### 🔬 [DetTrace](https://github.com/kritibehl/dettrace) — first-failure isolation via deterministic replay
 
-**Finds where execution *first* diverged — not just where it eventually broke. `0.93` root-cause confidence across `10,000+` validations.**
+**Compares baseline and candidate OpenTelemetry traces per request shape and fails CI on regression. On a checkout flow, `POST /checkout` p95 went `61.12 ms → 172.06 ms` and errors `0% → 20%`, while the unaffected `GET /health` cohort stayed PASS.**
 
 <details>
 <summary>How it works ↓</summary>
 <br>
 
-Debugging distributed failures is asymmetric: failures are easy to *see*, hard to *locate* — logs record state changes after they happen, and the event that actually caused the failure often isn't logged at all.
+Averaging all traffic into one latency number hides endpoint-specific regressions. DetTrace groups traces by request shape (root service, operation, HTTP method/route), then compares latency, error rate (in percentage points), span-graph structure, and critical-path contribution for each cohort independently.
 
-DetTrace generates an expected deterministic trace, replays the divergent execution, and binary-searches to isolate the first divergence index. Validated across 20 I/O transport scenarios (SPI, I2C, UART, GPIO races, distributed retry storms) with 47 GoogleTest cases passing clean under AddressSanitizer and UndefinedBehaviorSanitizer.
+Ships as a reusable GitHub Action, and was independently validated against standard OpenTelemetry Collector output and the OpenTelemetry Astronomy Shop demo app (`POST /ship-order` p95 `24.00 ms → 1015.23 ms`). It grew out of an earlier deterministic-replay core (first-divergence isolation), which is still in the repo.
 
-Honest about its limits — the README documents a ~7% false-positive rate and states plainly that firmware scenarios are trace simulations, not kernel-level implementations. That's the kind of thing worth saying out loud in an interview, not hiding.
+Honest about its limits: the critical-path algorithm is built for tree-structured traces and doesn't claim causal correctness for arbitrary asynchronous DAGs, and per-span p95 deltas aren't an additive decomposition of the end-to-end delta. That's the kind of thing worth saying out loud in an interview.
 
 </details>
 
-`C++17` `CMake` `GoogleTest` `Swift` `Python (FastAPI)`
+`Python` `OpenTelemetry` `C++17` `Swift`
 
 ---
 
@@ -161,7 +161,7 @@ Honest about its limits — the README documents a ~7% false-positive rate and s
 
 Production GenAI systems fail quietly: retrieval misses the right doc, a tool call returns a stale result, an answer generates without grounding — and one aggregate pass-rate number hides all of it.
 
-AgentGrid instruments every stage (triage → retrieval → tool execution → generation → eval gate → optional human review) with per-stage metrics, and gates releases on retrieval hit rate, tool success rate, p95 latency, and drift. Current state: 80% retrieval hit rate, 80% tool success rate, 880ms p95 — held, not shipped, with the hold reason surfaced explicitly. 57 tests passing.
+AgentGrid instruments every stage (triage → retrieval → tool execution → generation → eval gate → optional human review) with per-stage metrics, and gates releases on retrieval hit rate, tool success rate, p95 latency, and drift. Current state: 80% retrieval hit rate, 80% tool success rate, 880ms p95 — held, not shipped, with the hold reason surfaced explicitly.
 
 </details>
 
