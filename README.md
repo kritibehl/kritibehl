@@ -43,7 +43,7 @@ if you_read_one_thing:
 <table><tr>
 <td align="center"><b>7</b><br><sub>merged Temporal PRs</sub></td>
 <td align="center"><b>52</b><br><sub>tests · Faultline</sub></td>
-<td align="center"><b>+181%</b><br><sub>p95 regression caught · DetTrace</sub></td>
+<td align="center"><b>+228%</b><br><sub>p95 regression caught · DetTrace</sub></td>
 <td align="center"><b>+333%</b><br><sub>p95 spike caught · KubePulse</sub></td>
 </tr></table>
 </div>
@@ -133,7 +133,7 @@ Underneath the Kubernetes layer is a real networking lab: a two-AS eBGP topology
 
 ### 🔬 [DetTrace](https://github.com/kritibehl/dettrace) — first-failure isolation via deterministic replay
 
-**Compares baseline and candidate OpenTelemetry traces per request shape and fails CI on regression. On a checkout flow, `POST /checkout` p95 went `61.12 ms → 172.06 ms` and errors `0% → 20%`, while the unaffected `GET /health` cohort stayed PASS.**
+**Compares baseline and candidate OpenTelemetry traces per request shape and fails CI on regression. On a checkout flow, `POST /checkout` p95 went `43.04 ms → 141.30 ms` and errors `0% → 20%`, while the `GET /health` cohort had too few samples to judge and was reported `INCONCLUSIVE` instead of being flagged.**
 
 <details>
 <summary>How it works ↓</summary>
