@@ -42,7 +42,7 @@ if you_read_one_thing:
 <div align="center">
 <table><tr>
 <td align="center"><b>7</b><br><sub>merged Temporal PRs</sub></td>
-<td align="center"><b>52</b><br><sub>tests · Faultline</sub></td>
+<td align="center"><b>58</b><br><sub>tests · Faultline</sub></td>
 <td align="center"><b>+228%</b><br><sub>p95 regression caught · DetTrace</sub></td>
 <td align="center"><b>+333%</b><br><sub>p95 spike caught · KubePulse</sub></td>
 </tr></table>
@@ -103,7 +103,7 @@ I don't just build my own systems — I've shipped fixes into ones other enginee
 
 Fencing tokens stop a *stale* owner from committing late, but they can't help when the new owner is legitimate and the real question is whether a remote side effect already happened. Faultline injects real `SIGSTOP`/`SIGKILL` faults into live workers, runs each failure against naive, fencing, idempotency, and fencing+idempotency strategies, and checks explicit invariants after recovery.
 
-In the ambiguous-remote scenario, a worker is killed after a remote charge succeeds but before it learns the result. Naive and fencing-only both end with 2 external charges (fencing accepted both commits, since the second worker was a legitimate owner). Idempotency and fencing+idempotency end with 1 charge and 1 suppressed duplicate. 52 tests, two adapters (Celery, BullMQ), four invariant checkers.
+In the ambiguous-remote scenario, a worker is killed after a remote charge succeeds but before it learns the result. Naive and fencing-only both end with 2 external charges (fencing accepted both commits, since the second worker was a legitimate owner). Idempotency and fencing+idempotency end with 1 charge and 1 suppressed duplicate. 58 tests, two adapters (Celery, BullMQ), four invariant checkers (three reported on every Celery run).
 
 Scope is deliberately narrow: no claim of universal exactly-once execution, linearizability proofs, or production certification of Celery, BullMQ, or Redis.
 
