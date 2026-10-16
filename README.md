@@ -95,7 +95,7 @@ I don't just build my own systems — I've shipped fixes into ones other enginee
 
 ### 🧱 [Faultline](https://github.com/kritibehl/faultline) — distributed job execution correctness
 
-**Fencing alone still produced `2` duplicate charges when a worker was killed mid-remote-call. Idempotency produced `1`. Measured across a 4-strategy matrix on real Celery, Redis, and PostgreSQL.**
+**Fencing alone still left `2` charges for one job (one duplicate) when a worker was killed mid-remote-call; idempotency left `1`. Measured across a 4-strategy matrix on real Celery, Redis, and PostgreSQL.**
 
 <details>
 <summary>How it works ↓</summary>
